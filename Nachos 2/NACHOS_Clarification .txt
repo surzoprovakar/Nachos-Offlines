@@ -1,0 +1,32 @@
+Some of you have been questioning the use of the ProcessTable class.
+The ProcessTable class stores pointers to threads (processes).
+
+In NACHOS 2, I have used the ProcessTable only to keep track of 
+the number of active processes (refer to SysCallExecHandler() and 
+SysCallExecHandler() ), which can be done in easier ways. 
+So, you might wonder why it is there at all.
+
+The ProcessTable is essential to achieve the functionalities of NACHOS 3.
+
+In NACHOS 3, you will need to implement demand paging and page replacement
+policies. To replace an old page frame with a new one, you will need to keep
+track of the address spaces of all the active processes. This is not possible 
+without the ProcessTable. 
+
+Check your instruction documents to confirm if you really are required to
+implement a process table in NACHOS 2. If not, you can safely skip the trouble.
+But you will eventually need a process table in NACHOS 3. 
+
+For a deeper understanding,
+refer to MemoryManager::AllocateFrameByForce() in NACHOS 3.
+
+Please note that the MemoryManager class is completely re-written in NACHOS 3. 
+
+Also note that AddrSpace::TranslateAddress() is a useless method! It is never used!
+
+
+P.S.: In the last 10 days, my NACHOS repository has been visited 913 times. I am glad
+that I have been able to offer a little help. But at the same time, I would like to
+warn you about copy-pasting without thinking.
+
+"Hall of Shame" is not a nice place to find your ID in, right? :P    
